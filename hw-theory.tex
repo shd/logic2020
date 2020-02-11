@@ -1,0 +1,83 @@
+\documentclass[10pt,a4paper,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{stmaryrd}
+\usepackage{cmll}
+\usepackage{mathrsfs}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+\usepackage{proof}
+\usepackage{tikz}
+
+\makeatletter
+\newcommand{\dotminus}{\mathbin{\text{\@dotminus}}}
+
+\newcommand{\@dotminus}{%
+  \ooalign{\hidewidth\raise1ex\hbox{.}\hidewidth\cr$\m@th-$\cr}%
+}
+\makeatother
+
+\usetikzlibrary{arrows,backgrounds,patterns,matrix,shapes,fit,calc,shadows,plotmarks}
+\begin{document}
+
+\begin{center}{\Large\textsc{\textbf{Теоретические (``малые'') домашние задания}}}\\
+             \it Математическая логика, ИТМО, М3235-М3239, весна 2020 года\end{center}
+
+\section*{Домашнее задание №1: <<знакомство с исчислением высказываний>>}
+
+\begin{enumerate}
+
+\item Укажите про каждое из следующих высказываний, общезначимо, выполнимо, опровержимо или невыполнимо ли оно:
+\begin{enumerate}
+\item $\neg A\vee\neg\neg A$
+\item $(A\rightarrow\neg B)\vee(B\rightarrow\neg C)\vee(C\rightarrow\neg A)$
+\item $A \rightarrow B \vee A$
+\item $A \rightarrow B \with B \rightarrow A$
+\end{enumerate}
+
+\item Будем говорить, что высказывание $\alpha$ \emph{следует} из высказываний $\gamma_1, \gamma_2, \dots, \gamma_n$
+(и будем записывать это как $\gamma_1, \gamma_2, \dots, \gamma_n \models \alpha$), если
+при любой оценке, такой, что при всех $i$ выполнено $\llbracket\gamma_i\rrbracket = \text{И}$,
+также выполнено и $\llbracket\alpha\rrbracket = \text{И}$.
+
+Пусть даны высказывания $\alpha$ и $\beta$, причём $\alpha\models\beta$, но $\beta\not\models\alpha$. 
+Придумайте <<промежуточное>> высказывание $\gamma$, такое, что $\alpha \models \gamma$,
+$\gamma \models \beta$, причём $\gamma\not\models\alpha$ и $\beta\not\models\gamma$.
+
+\item Простые высказывания. Докажите высказывания, построив полный вывод:
+\begin{enumerate}
+\item $\alpha,\beta \vdash \alpha\with\beta$
+\item $\alpha,\beta \vdash \alpha\vee\beta$
+\item $\neg\alpha,\beta \vdash \alpha\vee\beta$
+\item $\alpha,\neg\beta \vdash \alpha\vee\beta$
+\item $\gamma \vdash \alpha\to\gamma$
+\item $\neg\alpha \vdash \neg\alpha$
+\item $\alpha,\beta \vdash \alpha\rightarrow\beta$
+\end{enumerate}
+
+\item Ассоциативность и коммутативность.
+\begin{enumerate}
+\item Докажите или опровергните: $\models \alpha\rightarrow\beta$ влечёт $\models \beta\rightarrow\alpha$.
+\item Докажите: $\vdash \alpha\vee\beta \rightarrow \beta\vee\alpha$
+\item Докажите: $\vdash \alpha\with\beta \rightarrow \beta\with\alpha$
+\end{enumerate}
+
+\item Контрапозиция. Докажите, что $\vdash \alpha\rightarrow\beta \rightarrow \neg (\beta\rightarrow\alpha)$
+
+\item Докажите следующие высказывания, построив полный вывод:
+\begin{enumerate}
+\item $\neg\alpha,\beta \vdash \neg(\alpha\&\beta)$
+\item $\alpha,\neg\beta \vdash \neg(\alpha\&\beta)$
+\item $\neg\alpha,\neg\beta \vdash \neg(\alpha\&\beta)$
+\item $\neg\alpha,\neg\beta \vdash \neg(\alpha\vee\beta)$
+\item $\alpha,\neg\beta \vdash \neg(\alpha\rightarrow\beta)$
+\item $\neg\alpha,\beta \vdash \alpha\rightarrow\beta$
+\item $\neg\alpha,\neg\beta \vdash \alpha\rightarrow\beta$
+\item $\alpha \vdash \neg\neg\alpha$
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
