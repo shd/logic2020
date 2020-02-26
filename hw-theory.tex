@@ -81,4 +81,154 @@ $\gamma \models \beta$, причём $\gamma\not\models\alpha$ и $\beta\not\mod
 \end{enumerate}
 
 \end{enumerate}
+
+\section*{Домашнее задание №2: <<интуиционистское исчисление высказываний>>}
+
+\begin{enumerate}
+\item Долги по теореме о полноте ИВ. Докажите:
+\begin{enumerate}
+\item $\vdash \alpha\vee\neg\alpha$
+\item $\Gamma,\alpha \vdash \phi$ и $\Gamma,\neg\alpha\vdash\phi$ влечёт $\Gamma\vdash\phi$
+\end{enumerate}
+
+\item Постройте дерево вывода для следующих высказываний интуиционистской логики
+(в данных примерах $\neg\alpha$ --- сокращение для $\alpha\rightarrow\bot$):
+
+\begin{enumerate}
+\item $\vdash\alpha\rightarrow\alpha$
+\item $\alpha\rightarrow\beta\vdash\neg\beta\rightarrow\neg\alpha$
+\item $\vdash\alpha\vee\beta\rightarrow\beta\vee\alpha$
+\item $\vdash\alpha\with\beta\rightarrow\beta\with\alpha$
+\item $\vdash\neg\neg(\alpha\vee\neg\alpha)$
+\end{enumerate}
+
+\item Постройте примеры частично упорядоченных множеств:
+\begin{enumerate}
+\item определено $a + b$, но не $a \cdot b$;
+\item определено $a \cdot b$, но не $a + b$;
+\item является решёткой, но не является дистрибутивной решёткой;
+\item является дистрибутивной, но не импликативной решёткой;
+\item является импликативной, но не имеет нуля;
+\end{enumerate}
+
+\item Решётки. Покажите, что следующие утверждения выполнены в любой решётке и
+при любых $a$, $b$ и $c$:
+
+\begin{enumerate}
+\item Коммутативность: $a \cdot b = b \cdot a$ и $a + b = b + a$
+\item Ассоциативность: $a \cdot (b \cdot c) = (a \cdot b) \cdot c$ и $a + (b + c) = (a + b) + c$
+\item Законы поглощения: $a \cdot (a + b) = a$ и $a + (a \cdot b) = a$
+\item Верно ли, что если $a \sqsubseteq b$, то $a + c \sqsubseteq b + c$ и $a \cdot c \sqsubseteq b \cdot c$?
+\item Верно ли, что если $a + c \sqsubseteq b + c$ или $a \cdot c \sqsubseteq b \cdot c$, то $a \sqsubseteq b$?
+\end{enumerate}
+
+\item В любой дистрибутивной решётке
+\begin{enumerate}
+\item $(a \cdot b) + c = (a + c) \cdot (b + c)$.
+\item Нет \emph{диамантов}: таких пяти элементов $p$, $q$, $r$, $s$, $t$, что 
+$p \sqsubseteq q, r, s \sqsubseteq t$, и при этом $q$, $r$ и $s$ --- несравнимы.
+
+\begin{center}\tikz{
+\node at (1,2)   (A) {t};
+\node at (0,0.5) (B) {q};
+\node at (1,0.5) (C) {r};
+\node at (2,0.5) (D) {s};
+\node at (1,-1)  (E) {p};
+\draw[->] (A) to (B); \draw[->] (B) to (E);
+\draw[->] (A) to (C); \draw[->] (C) to (E);
+\draw[->] (A) to (D); \draw[->] (D) to (E);
+}
+\end{center}
+
+При этом, если на данной диаграмме выполнено какое-то вычисление
+(например, $q + r = t$), то оно должно быть выполнено и в исходной дистрибутивной решётке.
+
+
+\item Нет \emph{пентагонов}: таких пяти элементов $p$, $q$, $r$, $s$, $t$, что 
+$p \sqsubseteq q, r, s \sqsubseteq t$, также $r \sqsubseteq s$, элемент же
+$q$ не сравним с $r$ и $s$.
+
+\begin{center}\tikz{
+\node at (5,2)   (A1) {t};
+\node at (4,0.5) (B1) {q};
+\node at (6,1)   (C1) {s};
+\node at (6,0)   (D1) {r};
+\node at (5,-1)  (E1) {p};
+\draw[->] (A1) to (B1); \draw[->] (B1) to (E1);
+\draw[->] (A1) to (C1); \draw[->] (C1) to (D1); \draw[->] (D1) to (E1);
+}\end{center}
+
+При этом, если на данной диаграмме выполнено какое-то вычисление
+(например, $q + r = t$), то оно должно быть выполнено и в исходной дистрибутивной решётке.
+
+\end{enumerate}
+
+\item Покажите, что в импликативной решётке
+\begin{enumerate}
+\item выполнена дистрибутивность;
+\item Из $a \sqsubseteq b$ следует $b\to c \sqsubseteq a\to c$ и $c\to a \sqsubseteq c \to b$;
+\item Из $a \sqsubseteq b \to c$ следует $a \cdot b \sqsubseteq c$;
+\item $a \sqsubseteq b$ выполнено тогда и только тогда, когда $a \to b = 1$;
+\item $b \sqsubseteq a \rightarrow b$;
+\item $a \rightarrow b \sqsubseteq ((a \rightarrow (b \rightarrow c)) \rightarrow (a \rightarrow c))$;
+\item $a \sqsubseteq b \rightarrow a \cdot b$;
+\item $a \rightarrow c \sqsubseteq (b \rightarrow c) \rightarrow (a + b \rightarrow c)$
+\end{enumerate}
+
+\item Рассмотрим топологию $\langle X, \Omega\rangle$ (напомним, что здесь $\Omega$ --- множество
+всех открытых подмножеств множества $X$). Рассмотрим множество $\Omega$, частично упорядоченное
+отношением <<быть подмножеством>>. Покажите, что получившаяся конструкция:
+
+\begin{enumerate}
+\item решётка;
+\item дистрибутивная решётка;
+\item импликативная решётка;
+\item псевдобулева алгебра;
+\item не является булевой алгеброй.
+\end{enumerate}
+
+\item Покажите, что булева алгебра --- булева алгебра.
+\item Покажите, что подмножества некоторого множества, упорядоченнные отношением 
+<<быть подмножеством>> --- булева алгебра.
+
+\item Покажите недоказуемость следующих высказываний интуиционистской логики, построив 
+\emph{конечные} псевдобулевы алгебры (т.е. частично упорядоченные множества с конечным
+количеством элементов), в которых следующие высказывания не истинны:
+
+\begin{enumerate}
+\item $A \vee \neg A$
+\item $(((A \rightarrow B) \rightarrow A) \rightarrow A)$
+\item $(A \rightarrow (B \vee \neg B)) \vee (\neg A \rightarrow (B \vee \neg B))$
+\item $\neg A \vee \neg\neg A $
+\end{enumerate}
+
+\item Теорема о полноте алгебр Гейтинга как моделей для интуиционистского исчисления высказываний.
+
+Уточним определения, данные на лекции:
+\begin{enumerate}
+\item Будем писать $\alpha\sqsubseteq\beta$, если $\alpha\vdash\beta$.
+\item Будем писать $\alpha\approx\beta$, если имеет место $\alpha\sqsubseteq\beta$ и $\beta\sqsubseteq\alpha$.
+\item Будем писать $[\alpha]$ для класса эквивалентности, порождённого по формуле $\alpha$:
+$[\alpha] = \{\phi\ |\ \phi \approx \alpha \}$
+\end{enumerate}
+Интуиция здесь такая: высказывание тем ближе к 0 (к лжи), чем меньше ситуаций, в которых оно истинно. 
+Поэтому если $\alpha\vdash\beta$, то $\alpha$ не больше $\beta$: возможно, $\beta$ истинно ещё в каких-то
+ситуациях, в которых ложно $\alpha$ (но не наоборот).
+
+Тогда докажите следующие утверждения:
+
+\begin{enumerate}
+\item $(\approx)$ есть действительно отношение эквивалентности.
+\item $[\alpha\with\beta]$ --- наибольшая нижняя грань $[\alpha]$ и $[\beta]$ в алгебре Линденбаума.
+То есть, $\alpha\with\beta \sqsubseteq \alpha$, $\alpha\with\beta \sqsubseteq \beta$, и из $\tau \sqsubseteq \alpha$
+и $\tau \sqsubseteq \beta$ следует $\tau \sqsubseteq \alpha\with\beta$. Также поясните, почему 
+нам достаточно доказать эти утверждения для отдельных представителей,
+чтобы доказать свойства для классов эквивалентности.
+\item $[\alpha\vee\beta]$ --- наименьшая верхняя грань $[\alpha]$ и $[\beta]$.
+\item $[\alpha\rightarrow\beta]$ --- псевдополнение $[\alpha]\rightarrow[\beta]$.
+\item $[\bot]$ --- ноль.
+\item $[\neg\alpha]$ --- псевдодополнение до нуля $\sim[\alpha]$.
+\end{enumerate}
+
+\end{enumerate}
 \end{document}
