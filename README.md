@@ -33,3 +33,31 @@ https://www.mccme.ru/free-books/shen/shen-logic-part2-2.pdf
 + Конспекты 2011 и 2018 года по логике.
 + Morten Heine B. Sørensen, Pawel Urzyczyn: Lections on the Curry-Howard Isomorphism
 https://disi.unitn.it/~bernardi/RSISE11/Papers/curry-howard.pdf
+
+## Лекция 3
+### Аксиоматика интуиционистской логики.
++ Исчисление высказываний (натуральный вывод).
++ Алгебры Гейтинга
++ Алгебра Линденбаума
++ Теорема о полноте алгебр Гейтинга как моделей ИИВ.
+### Где почитать
++ Morten Heine B. Sørensen, Pawel Urzyczyn: Lections on the Curry-Howard Isomorphism
+https://disi.unitn.it/~bernardi/RSISE11/Papers/curry-howard.pdf
++ В.Е.Плиско, В.Х.Хаханян, Интуиционистская логика, Мех-Мат МГУ 2009 (http://lpcs.math.msu.su/~plisko/intlog.pdf)
+
+## Лекция 4
+### Теорема о нетабличности ИИВ
++ Модели Крипке
++ Теорема о нетабличности ИИВ
+### Где почитать
++ В.Е.Плиско, В.Х.Хаханян, Интуиционистская логика, Мех-Мат МГУ 2009 (http://lpcs.math.msu.su/~plisko/intlog.pdf)
++ Конспект 2018 года
+
+## Лекция 5
+### Дополнительные свойства ИИВ
++ Гёделевы алгебры
++ Теорема о дизъюнктивности ИИВ
++ Теорема Гливенко
+### Где почитать
++ В.Е.Плиско, В.Х.Хаханян, Интуиционистская логика, Мех-Мат МГУ 2009 (http://lpcs.math.msu.su/~plisko/intlog.pdf)
++ Конспект 2018 года
