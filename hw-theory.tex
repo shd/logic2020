@@ -11,6 +11,7 @@
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
 \usepackage{proof}
 \usepackage{tikz}
+\usepackage{multicol}
 
 \makeatletter
 \newcommand{\dotminus}{\mathbin{\text{\@dotminus}}}
@@ -230,5 +231,108 @@ $[\alpha] = \{\phi\ |\ \phi \approx \alpha \}$
 \item $[\neg\alpha]$ --- псевдодополнение до нуля $\sim[\alpha]$.
 \end{enumerate}
 
+\end{enumerate}
+
+\section*{Домашнее задание №3: <<корректность и дизъюнктивность интуиционистского исчисления высказываний>>}
+\begin{enumerate}
+
+\item Теорема о корректности: если $\vdash \alpha$, то $\models \alpha$ в любой алгебре Гейтинга.
+Поскольу в принятом нами интуиционистском исчислении высказываний доказываются не высказывания, а
+некоторые сложные условные выражения (записи вида $\Gamma \vdash \alpha$), то и оценкой для
+данных выражений мы выберем неравенство. А именно, 
+если $\Gamma = \{\gamma_1, \dots, \gamma_n\}$, $g_i = \llbracket \gamma_i \rrbracket$ и
+$a = \llbracket \alpha \rrbracket$, то выражению $\Gamma \vdash \alpha$ мы сопоставим неравенство
+$$g_1 \cdot g_2 \cdot \dots \cdot g_n \sqsubseteq a$$
+и записывать его будем как $\Gamma \sqsubseteq a$.
+Также, на случай $G = \varnothing$ положим, что $\varnothing \sqsubseteq a$ означает $a = 1$
+(это естественно предположить, поскольку к любому $G$ всегда можно добавить некоторое 
+$g_0 = 1$, при этом смысл выражения $g_0 \cdot g_1 \cdot g_2 \cdot \dots \cdot g_n \sqsubseteq a$ 
+останется прежним).
+
+Отметим, что следующие утвержедения очевидны (или уже показаны ранее):
+\begin{itemize}
+\item \emph{Аксиома.} $G,a \sqsubseteq a$.
+\item \emph{Введение $(\with)$.} Если $G \sqsubseteq b$ и $G \sqsubseteq c$, то $G \sqsubseteq b \cdot c$.
+\item \emph{Удаление $(\with)$.} Если $G \sqsubseteq a \cdot b$, то $G \sqsubseteq a$ и $G \sqsubseteq b$.
+\item \emph{Введение $(\vee)$.} Если $G \sqsubseteq b$, то $G \sqsubseteq b + c$ и $G \sqsubseteq c + b$.
+\end{itemize}
+
+Теперь осталось заполнить промежутки и получить полноценное доказательство.
+А именно, покажите, что:
+
+\begin{enumerate}
+\item \emph{Введение $(\to)$.} Если $G,a \sqsubseteq b$, то $G \sqsubseteq a \to b$.
+Убедитесь, что если $a \sqsubseteq b$, то $\varnothing \sqsubseteq a \to b$.
+\item \emph{Удаление $(\to)$.} Если $G \sqsubseteq a \to b$ и $G \sqsubseteq a$, то $G \sqsubseteq b$.
+\item \emph{Удаление $(\vee)$.} Если $G,a \sqsubseteq c$, $G,b \sqsubseteq c$ и $G \sqsubseteq a+b$,
+то $G \sqsubseteq c$.
+\item \emph{Удаление лжи.} Если $G \sqsubseteq 0$, то $G \sqsubseteq b$ при любом $b$.
+\item Основываясь на доказанных выше утверждениях, покажите теорему о корректности в целом.
+\end{enumerate}
+
+\item Поясните, как соотносится $G \sqsubseteq a$ со следующими системой (подзадача a) 
+и совокупностью (подзадача b) неравенств:
+
+\begin{multicols}{2}%
+(a) $$\left\{\begin{array}{l}
+g_1 \sqsubseteq a\\
+g_2 \sqsubseteq a\\
+\dots\\
+g_n \sqsubseteq a\end{array}\right.
+$$
+
+(b) $$\left[\begin{array}{l}
+g_1 \sqsubseteq a\\
+g_2 \sqsubseteq a\\
+\dots\\
+g_n \sqsubseteq a\end{array}\right.$$
+\end{multicols}
+То есть, следует ли какое-нибудь утверждение из какого-нибудь другого, и если да, то докажите,
+если нет --- предложите контрпример.
+
+\item Покажите, что $\Gamma(\mathcal{A})$ --- алгебра Гейтинга, если $\mathcal{A}$ --- алгебра Гейтинга.
+
+\item Покажите или опровергните, что если $\Gamma(\mathcal{B})$~--- алгебра Гейтинга, 
+то и $\mathcal{B}$ --- алгебра Гейтинга.
+
+\item Покажите, что отображение $\varphi: \Gamma(\mathcal{A})\to\mathcal{A}$, определённое как:
+$$\varphi(g) = \left\{\begin{array}{ll}
+   g,& \mbox{если }g \sqsubset \omega\\
+   1_\mathcal{A},& \mbox{если }g = \omega \mbox{ или } g = 1_{\Gamma(\mathcal{A})}\end{array}\right.$$
+действительно является гомоморфизмом.
+
+\item Является ли требование на сохранение нуля в определении гомоморфизма алгебр Гейтинга обязательным?
+
+Если точнее, пусть $\varphi: \mathcal{A} \to \mathcal{B}$ --- отображение алгебр Гейтинга, 
+сохраняющее операции: $\varphi(a\star b) = \varphi(a)\star\varphi(b)$ и $\varphi(\neg a) = \neg \varphi (a)$.
+Всегда ли $\varphi(0_\mathcal{A}) = 0_\mathcal{B}$ и $\varphi$ --- гомоморфизм.
+
+\item Покажем, что если $\alpha$ доказано в интуиционистском исчислении высказываний 
+в стиле Гильберта (с изменённой 10 аксиомой:
+$\alpha\to\neg\alpha\to\beta$), то оно может быть доказано и в интуиционистской. 
+
+Для этого покажите, что:
+\begin{enumerate}
+\item Все аксиомы 1-9 выполнены (подзадачи a.1 --- a.9): если $\alpha$ --- аксиома, то
+$\vdash_\text{и}\alpha$.
+\item $\vdash_\text{и}\alpha\rightarrow\neg\alpha\rightarrow\beta$.
+\item Покажите правило Modus Ponens: если $\vdash_\text{и} \alpha$ и $\vdash_\text{и} \alpha\to\beta$,
+то $\vdash_\text{и} \beta$.
+\end{enumerate}
+
+\item Как доказать, что если $\vdash_\text{и}\alpha$, то $\vdash_\text{к}\alpha$?
+Придумайте схему доказательства, для доказательства отдельных утверждений можно пользоваться 
+теоремой о полноте К.И.В.
+
+\item Как доказать, что если $\vdash_\text{и}\alpha$, то $\vdash\alpha$ в интуиционистском исчислении высказываний
+в стиле Гильберта? Придумайте схему доказательства.
+
+\item Покажем теорему Гливенко. Для этого покажем следующее:
+
+\begin{enumerate}
+\item Если $\vdash_\text{и}\alpha$, то $\vdash_\text{и}\neg\neg\alpha$.
+\item $\vdash_\text{и}\neg\neg\alpha\to\alpha$.
+\item Вспользовавшись предыдущими пунктами и задачами, докажите теорему Гливенко.
+\end{enumerate}
 \end{enumerate}
 \end{document}
