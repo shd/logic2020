@@ -428,4 +428,50 @@ $$\psi ::= \forall x.\psi | \exists x.\psi | \sigma$$
 
 \end{enumerate}
 
+\section*{Домашнее задание №5: арифметика}
+
+\begin{enumerate}
+\item Докажите следующие утверждения:
+\begin{enumerate}
+\item $a + (b + c) = (a+b) + c$
+\item $a \cdot b = b \cdot a$
+\item $a \cdot (b \cdot c) = (a \cdot b) \cdot c$
+\item $a \cdot (b + c) = a \cdot b + a \cdot c$
+\end{enumerate}
+                                                 
+\item Будем считать, что $a \le b$ если либо $a=0$, либо $p\le q$ при $p' = a$ и $q' = b$.
+
+\begin{enumerate}
+\item Покажите, что если $a \le b$, то $a + c \le b + c$.
+\item Покажите, что если $a \le b$ и $c \le d$, то $a \cdot c \le b \cdot d$.
+\item Покажите, что при любых $a$ и $b$ выполнено $a \le b$ или $b \le a$.
+\item Покажите, что если $a \le b$ и $b \le a$, то $a = b$.
+\end{enumerate}
+
+\item Докажите следующие утверждения в формальной арифметике:
+
+\begin{enumerate}
+\item $\vdash 0 + a = a + 0$
+\item $\vdash a = b \rightarrow a + 0' = b + 0'$
+\item $\vdash a = b \rightarrow a + c = b + c$
+\end{enumerate}
+
+\item Определим новое обозначение: будем писать $x \le y$ вместо $\exists a.x + a = y$
+(и воспринимать это новое обозначение как своего рода макроподстановку).
+Также, введём обозначение для записи натуральных чисел в формальной арифметике:
+$$\overline{n} = \left\{\begin{array}{ll}0,& n=0 \\ (\overline{n-1})',& n > 0\end{array}\right.$$
+Естественно, данные обозначения целиком принадлежат мета-языку.
+Покажите в формальной арифметике следующие утверждения:
+
+\begin{enumerate}
+\item $\vdash a = b \rightarrow a \le b$
+\item $\vdash a \le b \rightarrow a' \le b'$
+\item $\vdash a \le b \rightarrow \forall c.a + c \le b + c$
+\item $\vdash a \le b \vee b \le a$
+\item Обозначим за $\phi_n(x)$ формулу $x = 0 \vee x = 0' \vee x = 0'' \vee \dots \vee x = \overline{n}$.
+Покажите тогда, что при любом натуральном $n$ выполнено $\vdash a \le \overline{n} \rightarrow \phi_n(a)$
+\item При любом натуральном $n$ выполнено $\vdash \phi_n(a) \rightarrow a \le \overline{n}$
+\end{enumerate}
+\end{enumerate}
+
 \end{document}
