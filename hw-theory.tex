@@ -624,7 +624,7 @@ $f(x_1,\dots,x_k,t) \ne 0$, либо $n$, если функция равна 0 �
 
 \begin{enumerate}
 \item nil: гёделев номер пустого списка;
-\item $\textrm{cons}(\ulcorner a_0,\dots,a_{n-1}\urcorner,x) = \ulcorner a_0,\dots,a_{n-1},x\urcorner$;
+\item $\textrm{cons}(\ulcorner a_0,\dots,a_{n-1}\urcorner,x) = \ulcorner x,a_0,\dots,a_{n-1}\urcorner$;
 \item head: функция, возвращающая голову списка;
 \item tail: функция, возвращающая хвост списка;
 \item получение элемента списка с номером $k$: $(\ulcorner a_0, \dots, a_{n-1} \urcorner)_k = a_k$
